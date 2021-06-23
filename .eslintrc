@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src"],
+        "extensions": [".js", ".ts", ".jsx", ".tsx"]
+      }
+    },
+    "import/extensions": [".js", ".ts", ".jsx", ".tsx"]
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    // Typescript
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-use-before-define": "off",
+    "no-shadow": "off",
+    "no-param-reassign": 0,
+    "@typescript-eslint/no-shadow": ["error"],
+    // React
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "react/no-multi-comp": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
+    "no-plusplus": 0,
+    "prefer-destructuring": ["warn", { "object": true, "array": false }],
+    "no-underscore-dangle": 0,
+    // Start temporary rules
+    // These rules are here just to keep the lint error to 0 during the migration to the new rule set
+    // They need to be removed and fixed as soon as possible
+    "@typescript-eslint/ban-ts-comment": [1, { "ts-ignore": false, "ts-nocheck": false }],
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-empty-function" : 0,
+    "radix": 0,
+    "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/media-has-caption": 0
+    // End temporary rules
+  }
+}
