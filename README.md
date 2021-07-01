@@ -1,4 +1,4 @@
-# Redux + TypeScript Create React DApp template
+# Redux + TypeScript Create React DApp template (Pancake Style)
 
 ## Available Scripts
 
